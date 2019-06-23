@@ -6,10 +6,10 @@ import urllib3
 from time import gmtime, strftime
 from urllib.request import urlopen
 
+minimalmodbus.BAUDRATE = 19200
 id_No = "6999"
 
-def waterlevReading():
-    minimalmodbus.BAUDRATE = 19200
+def waterlevReading():    
     # port name, slave address (in decimal)
     instrument = minimalmodbus.Instrument('/dev/ttyUSB0', 1)
     # Register number, number of decimals, function code
@@ -23,8 +23,7 @@ def waterlevReading():
     time.sleep(5)
     return wl
 
-def rainfallReading():
-    minimalmodbus.BAUDRATE = 9600
+def rainfallReading():    
     # port name, slave address (in decimal)
     instrument = minimalmodbus.Instrument('/dev/ttyUSB0', 2)
     # Register number, number of decimals, function code
